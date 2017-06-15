@@ -1,0 +1,140 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html><head>
+<title>READING XML FILES WITH AJAX</title>
+<script type="text/javascript">
+// initialize XMLHttpRequest object
+var xmlobj=null;
+var data=new Array();
+// send http request
+function sendRequest(doc)
+	{                      // check for existing requests
+		if(xmlobj!=null&&xmlobj.readyState!=0&&xmlobj.readyState!=4)
+		{
+			xmlobj.abort();
+		}
+		try
+		{
+							// instantiate object for Mozilla, Nestcape, etc.
+			xmlobj=new XMLHttpRequest();
+		}
+		catch(e)
+		{
+			try
+			{
+							// instantiate object for Internet Explorer
+				xmlobj=new ActiveXObject(Microsoft.XMLHTTP);
+			}
+			catch(e)
+			{
+							// Ajax is not supported by the browser
+				xmlobj=null;
+				return false;
+			}
+		}
+							// assign state handler
+		xmlobj.onreadystatechange=stateChecker;
+							// open socket connection
+		xmlobj.open("GET",doc,true);
+							// send GET request
+		xmlobj.send(null);
+	}
+// check request status
+function stateChecker()
+	{
+							// if request is completed
+		if(xmlobj.readyState==4)
+		{                  // if status == 200 display text file
+			if(xmlobj.status==200)
+			{
+							// create data container
+				createDataContainer();
+							// read XML data
+				data=xmlobj.responseXML.getElementsByTagName("message");
+							// display XML data
+				displayData();
+			}
+			else
+			{
+			alert("Failed to get response :"+ xmlobj.statusText);
+			}
+		}
+	}
+
+// create data container
+function createDataContainer()
+{
+	var div=document.getElementById("container");
+	if(div)
+	{
+		return
+	};
+	var div=document.createElement("div");
+	div.setAttribute("id","container");
+	document.getElementsByTagName("body")[0].appendChild(div);
+}
+// display data at a given time interval
+function displayData()
+{
+	// reset data container
+	document.getElementById("container").innerHTML="";
+	//var ul=document.createElement("ul");
+	for(var i=0;i<data.length;i++)
+	{
+		var a = data[i].getElementsByTagName("url")[0].firstChild.nodeValue;
+				document.write("<a href='");
+				document.write(a);
+		document.write("'>")
+		var title = data[i].getElementsByTagName("title1")[0].firstChild.nodeValue;
+		document.write(title);
+		document.write("</a>");
+				// create links
+		//var li=document.createElement("li");
+		//var a=document.createElement("a");
+
+				// assign "href" attribute
+		//a.setAttribute("href",data[i].getElementsByTagName("url")[0].firstChild.nodeValue);
+				// add link labels
+		//a.appendChild(document.createTextNode(data[i].getElementsByTagName("title1")[0].firstChild.nodeValue));
+		var text = data[i].getElementsByTagName("author");
+		for(var j=0;j<text.length; j++)
+		{
+			document.write(text[j].childNodes[0].nodeValue);
+		}
+		document.write("<br>");
+	//	li.appendChild(a);
+	//	ul.appendChild(li);
+	}
+
+	//document.getElementById("container").appendChild(ul);
+	// update headlines each 1 hour
+	//setTimeout('sendRequest("http://www.mme.wsu.edu/~spd/news.xml")',5*1000);
+}
+// execute program when page is loaded
+window.onload=function()
+{
+	document.write("inside onload");
+	// check if browser is DOM compatible
+	if(document.getElementById&&document.getElementsByTagName&&document.createElement)
+	{
+	// load XML file
+	sendRequest("http://www.mme.wsu.edu/~spd/news.xml");
+	}
+}
+</script>
+<style type="text/css">
+#container {
+background: #eee;
+padding: 5px;
+border: 1px solid #000;
+}
+li {
+margin-top: 5px;
+}
+a:link,a:visited {
+font: bold 11px Tahoma, Arial, Helvetica, sans-serif;
+color: #00f;
+}
+a:hover {
+color: #f00;
+}</style></head><body>Hello there</body></html>

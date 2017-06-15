@@ -1,0 +1,556 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <meta name="keywords"
+  content="WSU, Washington State, Washington State University " />
+  <title>Sustainable Product Lifecycle Design Lab - Publications</title>
+  <!-- favorites ico -->
+  <link rel="shortcut icon" href="http://images.wsu.edu/favicon.ico" />
+  <!-- replace the key below - replace the key below - replace the key below-->
+  <link href="http://designer.wsu.edu/template/css2.aspx?key=0eab28zs010"
+  type="text/css" rel="stylesheet" />
+  <style type="text/css">
+#tt {
+ position:absolute;
+ display:block;
+ background:url(images/tt_left.gif) top left no-repeat;
+ }
+ #tttop {
+ display:block;
+ height:5px;
+ margin-left:5px;
+ background:url(images/tt_top.gif) top right no-repeat;
+ overflow:hidden;
+ }
+ #ttcont {
+ display:block;
+ padding:2px 12px 3px 7px;
+ margin-left:5px;
+ background:#666;
+ color:#fff;
+ }
+#ttbot {
+display:block;
+height:5px;
+margin-left:5px;
+background:url(images/tt_bottom.gif) top right no-repeat;
+overflow:hidden;
+}</style>
+  <!-- replace the key above -->
+  <!--Print tool -->
+  <script type="text/javascript"
+  src="http://images.wsu.edu/javascripts/print.js">
+ </script>
+  <script type="text/javascript">
+  var tooltip=function(){
+   var id = 'tt';
+   var top = 3;
+   var left = 3;
+   var maxw = 300;
+   var speed = 10;
+   var timer = 20;
+   var endalpha = 95;
+   var alpha = 0;
+   var tt,t,c,b,h;
+   var ie = document.all ? true : false;
+   return{
+    show:function(v,w){
+     if(tt == null){
+      tt = document.createElement('div');
+      tt.setAttribute('id',id);
+      t = document.createElement('div');
+      t.setAttribute('id',id + 'top');
+      c = document.createElement('div');
+      c.setAttribute('id',id + 'cont');
+      b = document.createElement('div');
+      b.setAttribute('id',id + 'bot');
+      tt.appendChild(t);
+      tt.appendChild(c);
+      tt.appendChild(b);
+      document.body.appendChild(tt);
+      tt.style.opacity = 0;
+      tt.style.filter = 'alpha(opacity=0)';
+      document.onmousemove = this.pos;
+     }
+     tt.style.display = 'block';
+     c.innerHTML = v;
+     tt.style.width = w ? w + 'px' : 'auto';
+     if(!w && ie){
+      t.style.display = 'none';
+      b.style.display = 'none';
+      tt.style.width = tt.offsetWidth;
+      t.style.display = 'block';
+      b.style.display = 'block';
+     }
+    if(tt.offsetWidth > maxw){tt.style.width = maxw + 'px'}
+    h = parseInt(tt.offsetHeight) + top;
+    clearInterval(tt.timer);
+    tt.timer = setInterval(function(){tooltip.fade(1)},timer);
+    },
+    pos:function(e){
+     var u = ie ? event.clientY + document.documentElement.scrollTop : e.pageY;
+     var l = ie ? event.clientX + document.documentElement.scrollLeft : e.pageX;
+     tt.style.top = (u - h) + 'px';
+     tt.style.left = (l + left) + 'px';
+    },
+    fade:function(d){
+     var a = alpha;
+     if((a != endalpha && d == 1) || (a != 0 && d == -1)){
+      var i = speed;
+     if(endalpha - a < speed && d == 1){
+      i = endalpha - a;
+     }else if(alpha < speed && d == -1){
+       i = a;
+     }
+     alpha = a + (i * d);
+     tt.style.opacity = alpha * .01;
+     tt.style.filter = 'alpha(opacity=' + alpha + ')';
+    }else{
+      clearInterval(tt.timer);
+       if(d == -1){tt.style.display = 'none'}
+    }
+   },
+   hide:function(){
+    clearInterval(tt.timer);
+     tt.timer = setInterval(function(){tooltip.fade(-1)},timer);
+    }
+   };
+}();</script>
+</head>
+
+<body>
+<!--Beginning of the WSU Identifier Zone. Refer to http://identity.wsu.edu/ for more information. -->
+
+<div id="wrapper">
+
+<noscript>
+
+<div id="globalnav">
+<ul>
+  <li>Washington State University</li>
+</ul>
+</div>
+
+<div id="logo">
+<a href="http://www.wsu.edu"><img
+src="http://images.wsu.edu/global/bg-logo.jpg" alt="WSU Logo" /></a></div>
+</noscript>
+<script type="text/javascript" language="Javascript"
+src="http://images.wsu.edu/javascripts/wsuidentifierV2.js">
+</script>
+<script type="text/javascript" language="javascript">
+ var strHeader; strHeader = getHeader(); document.write(strHeader);</script>
+<!--End of the WSU Identifier Zone. -->
+
+<div id="siteID">
+<h2>School of Mechanical and Materials Engineering</h2>
+
+<h1>Sustainable Product Lifecycle Design Lab </h1>
+</div>
+
+<div id="toolbar">
+<ul>
+  <li><a href="#"></a></li>
+  <li><a href="#">Publications</a></li>
+</ul>
+</div>
+
+<div id="content">
+
+<div id="nav">
+<!-- Optional Javascript navtool insert location. Visit http://identity.wsu.edu/web/downloads/add-ons/nav-java.aspx for more info -->
+<!-- Main Navigation -->
+<ul>
+  <li><a href="Home.html">Home</a></li>
+  <li><a href="Research.html">Research</a></li>
+  <li><a href="People.html" class="navparentpath">People</a> </li>
+  <li><a href="Pubs.html">Publications </a></li>
+  <li><a href="Projects.html">Projects</a></li>
+  <li><a href="Contact.html">Contact Us</a></li>
+  <li><a href="Links.html">Links</a></li>
+</ul>
+</div>
+
+<div id="main" style="text-align:justify;" width=300>
+<p>In total 16 Journal papers, 25 conference papers, 5 book chapters, 7 posters, 3 reports, 2 PhD dissertations and 3 MS thesis/reports </p>
+
+<script>
+<h4>In Review</h4>
+
+<p>Huang H., and Ameta G., "Computational Machining Energy Estimation Tools in Early Design", in
+review.</p>
+
+<p>Huang H., and Ameta G., "A Novel Pattern for Energy Estimation Framework and Energy Estimation Tools to Compute Energy Consumption", in
+review.</p>
+
+</script>
+<p><b>Sort By - <A href="Pubsy.html"><i>YEAR</i></a> :: <A href="Pubst.html">Type</a> :: <A href="PubsTo.html">Topic</a></b></p>
+<h4>2013</h4>
+
+<p><b><i>Journal</i></b></p>
+<p>Mani M., Johansson B., Lyons K., Sriram R.D. and Ameta G., <A href="http://link.springer.com/article/10.1007%2Fs11367-012-0538-0">&ldquo;Modeling,
+Simulation and Analysis for Sustainable Product Realization&rdquo;</a>, article in press, International Journal of Life Cycle Assessment.</p>
+
+<p>Gagandeep Singh, Ameta G., Davidson J.K., and Shah J.J., <A href="http://asmedl.org/getabs/servlet/GetabsServlet?prog=normal&id=JMDEDB000135000003031005000001&idtype=cvips&gifs=Yes&ref=no">"Tolerance Analysis
+of a Self-Aligning Coupling Assembly using Tolerance-Maps in Design"</a>, Vol 135(3), Journal of Mechanical Design, March 2013, 14pp.</p>
+
+<p> Ameta G., "Establishing the Energy Profile for Geometric Variations
+of a Planar Surface", Procedia CIRP, Elsevier, article in press.</p>
+<p><b><i>Conference Papers</i></b></p>
+<p>Yang Hu and Ameta G., "LIFE-CYCLE ASSESSMENT AND ECO-DESIGN OF A WIRELESS TV/VCR REMOTE", Proceedings of American Society of Mechanical Engineering-
+International Design Engineering Technical Conference-2013/ Computers and
+Information in Engineering-12484, Portland, OR, USA, Aug 4 - 7.</p>
+<p>Ameta G., Brown C., Lubell J. and Lipman R., "A Survey of Standards for the Lifecycle Management of Composite Structural Products", Proceedings of American Society of Mechanical Engineering-
+International Design Engineering Technical Conference-2013/ Computers and
+Information in Engineering-12655, Portland, OR, USA, Aug 4 - 7.</p>
+
+
+<p><b><i>Poster</i></b></p>
+<p>Yang Hu and Ameta G., "Poster: Graph based automatic computation of product disassembly time from assembly models", Wiley Research Exposition, 2013, WSU, Pullman, WA.</p>
+<p>Raman A., and Ameta G., "Novel Multi-Dimensional Geometric Metric for Uncertainty in Life-Cycle Assessment", Wiley Research Exposition, 2013, WSU, Pullman, WA.</p>
+
+<h4>2012</h4>
+<p><b><i>Thesis</i></b></p>
+<p>Huang H., <A href ="https://research.wsulibs.wsu.edu:8443/xmlui/handle/2376/4057">"A CAD-Based Software Framework for Estimating Energy Through a Product Lifecycle"</a>, Ph.D. Dissertation, 2012, Washington State University, Pullman, WA.</p>
+<p>Anazi M., "Effects of Arm Positions in a Stereolithography Machine on Geometric Quality of Manfuactured Surface", M.S. Project Report, 2012, Washington State University, Pullman, WA.</p>
+
+<p><b><i>Book Chapters</i></b></p>
+
+<p>Pezeshki C, Panchal J. and Ameta G., <A href="http://www.springerreference.com/docs/html/chapterdbid/334162.html">&ldquo;Blueprints for Teaching Ecodesign
+and Sustainability to University Students - Blueprints for Success&rdquo;</a>, In
+Handbook of Sustainable Engineering, Editors Wolfgang Wimmer and Joanne
+Kauffman, Springer, Dordrecht, Netherlands.</p>
+
+<p><b><i>Conference Papers</i></b></p>
+
+<p> Ameta G., <A href="http://cirpcat2012.hud.ac.uk/downloads/Programme%20CIRP%20CAT%202012%20v2.0.pdf">"Towards Establishing the Energy Profile for Geometric Variations
+of a Planar Surface"</a>, 12th CIRP Conference on Computer Aided Tolerancing,
+University of Huddersfield, 18th - 19th April 2012.</p>
+
+<p><b><i>Posters</i></b></p>
+<p>Srinivasan R., Hu Yang and Ameta G., "Poster:Estimating Selective Disassembly Time using Disassembly Graph based on Connective Complexity Metrics", <b><i>CIE Poster Award</i></b>, International Design Engineering Technical Conference-2012/ Computers and
+Information in Engineering, Chicago, IL, USA, Aug 11 - 14, 2012.</p>
+
+<p>Godinez, A. and Ameta G., "Poster:Flatness evaluation for a v-flash rapid prototype (rp) machine", Summer REU posters, Washington State University, 2012.</p>
+
+<h4>2011 </h4>
+
+<p><b><i>Journal Papers</i></b></p>
+
+<p>Ameta G., Samper S. and Giordano M., <A href="http://asmedl.org/getabs/servlet/GetabsServlet?prog=normal&id=JCISB6000011000002021004000001&idtype=cvips&gifs=yes">"Comparison of Spatial Math Models for
+Tolerance Analysis: Tolerance-Maps, Deviation Domain, and TTRS"</a>, Journal of
+Computing and Information Science in Engineering, Vol. 11(2), 021004, 8pp,
+2011.</p>
+
+<p>Ameta G., Davidson J.K., and Shah J.J., <A href="http://asmedl.org/getabs/servlet/GetabsServlet?prog=normal&id=JCISB6000011000001011002000001&idtype=cvips&gifs=yes">"Effects of Size, Orientation, and
+Form Tolerances on the Frequency Distributions of clearance between two planar
+faces"</a>, Journal of Computing and Information Science in Engineering, Vol.
+11(1), 011002, 10pp, 2011, Journal's Impact factor -0.784</p>
+
+<p>Ameta G., Rachuri S., Fiorentini X., Mani M., Fenves S. J., Lyons K., and
+Sriram R., <A href="http://www.springerlink.com/content/jh05187m837m7661/">"Extending the notion of quality from physical metrology to
+information and sustainability"</a>, Journal of Intelligent Manufacturing, Vol.
+22(5), pp737-750, 2011, Journals Impact factor -0.972</p>
+
+<p><b><i>Thesis</i></b></p>
+<p>Srinivasan R., "Sustainability Analysis and Connective Complexity Method for Selective Disassembly Time Prediction", MS Thesis, 2011, Washington State University, Pullman, WA.</p>
+
+
+<p><b><i>Conference papers</i></b></p>
+
+<p>Hawthorne B. and Ameta G., "LCA Study And Comparison Of Two Multispeed
+Blenders", Proceedings of American Society of Mechanical Engineering-
+International Design Engineering Technical Conference-2011/ Computers and
+Information in Engineering-48612, Washington DC, USA, Aug 28 - 31.</p>
+
+<p>Srinivasan R. and Ameta G., "Comparison of Life-Cycle Assessment of Two
+Toasters", Proceedings of American Society of Mechanical Engineering-
+International Design Engineering Technical Conference-2011/ Computers and
+Information in Engineering-48772, Washington DC, USA, Aug 28 - 31.</p>
+
+<p>Zhenghui S. and Ameta G., "Life-Cycle Asssessment of an Electric Rice
+Cooker", Proceedings of American Society of Mechanical Engineering-
+International Mechanical Engineering Congress - 2011 (paper no. 64356), Denver,
+CO, Nov 13-16.</p>
+
+<h4>2010 </h4>
+
+<p><b><i>Journal Papers</i></b></p>
+
+<p>Ameta G., Panchal J. and Pezeshki C., <A href="http://www.ijee.ie/latestissues/Vol26-2/07_Ijee2257.pdf">"A Collective-Learning Approach to
+Sustainable Design Education"</a>, International Journal of Engineering Education,
+Vol 26(2), pp 265-270, 2010. Journal's impact factor - 0.751</p>
+
+<p>Ameta G., Davidson J.K., and Shah J.J., <A href="http://www.sciencedirect.com/science/article/pii/S0141635908000330">"Influence of form on
+Tolerance-Map-generated frequency distributions for 1-D clearance in design"</a>,
+Journal of Precision Engineering. Vol 34, pp 22-27, 2010. Journal's impact
+factor - 1.137</p>
+
+<p>Ameta G., Davidson J.K., and Shah J.J., <A href="http://asmedl.org/getabs/servlet/GetabsServlet?prog=normal&id=JCISB6000010000001011005000001&idtype=cvips&gifs=yes">"Statistical Tolerance Allocation
+for Tab-Slot Assemblies using Tolerance-Maps"</a>, Journal of Computing and
+Information Science in Engineering, Vol 10(1), 2010. Journal's impact factor -
+0.784</p>
+
+<p>Ameta G. and Sarkar P., &ldquo;Comparison of Electronics Products Standards
+for Sustainability&rdquo;, International Journal of Product Design, 1(1),
+2010.</p>
+
+<p><b><i>Book Chapters</i></b></p>
+
+<p>Ameta G., and Hoffmann P., &ldquo;Ontological Model of Tolerances for
+Interoperability in Product Life Cycle&rdquo;, Chapter 26 In Geometric
+Variations within Product Lifecycle management (Selected Papers from the 11th
+CIRP International Conference on Computer-Aided Tolerancing, held at Université
+de Savoie, Annecy, France, 26-27 March 2009), Editors Max Giordano, Luc Mathieu
+and François Villeneuve, 2010, ISTE, HERMES publishers, London, UK.</p>
+
+<p><b><i>Conference papers</i></b></p>
+
+<p>Huang H. and Ameta G., &ldquo;Towards a Computational Framework for Energy
+Estimation -- Needs, Requirements, and Its Generic Shell&rdquo;, Proceedings of
+American Society of Mechanical Engineering-Manufacturing Science and
+Engineering Conference-2010, Montreal, CA, USA, Aug 15 - 18.</p>
+
+<p><b><i>Posters</i></b></p>
+
+<p>Noah G. and Ameta G., &ldquo;Poster: Towards a Multidimensional Geometric
+Metric for Sustainability&rdquo;, Summer REU, 2010.</p>
+
+<p>Srinivasan R. and Ameta G., &ldquo;Poster: Use - phase energy impact of two
+toasters: towards sustainable selective disassembly planning&rdquo;,
+Proceedings of American Society of Mechanical Engineering-Manufacturing Science
+and Engineering Conference -2010, Erie, PA, Oct 12-15.</p>
+
+<p><b><i>Reports</i></b></p>
+
+<p style="text-align:justify;">Mani M., Johansson B. J., Lyons K. W., Sriram R. D., Ameta G., "Modeling, Simulation and Analysis for Sustainable Product Development", NISTIR 7745, Nov 2010, <A href="http://www.nist.gov/manuscript-publication-search.cfm?pub_id=905456">link</a></p>
+
+
+<h4>2009 </h4>
+
+<p><b><i>Journal Papers</i></b></p>
+
+<p>Ameta G., Mani M., Rachuri S., Lyons K.W., Feng S.C., and Sriram R.D.,
+<A href="http://www.tandfonline.com/doi/abs/10.1080/19397030903318226#preview">"Carbon Weight Analysis for Machining Operation and Allocation for Redesign"</a>,
+International Journal of Sustainable Engineering, Vol 2(4), December 2009.</p>
+
+<p>Ameta G., <A href="http://www.eurekaselect.com/95194/article/recent-patents-mechanical-tolerances">"Recent Patents on Mechanical Tolerancing"</a>, Recent
+Patents on Mechanical Engineering, Vol 2(1), pp 55-60, January 2009.</p>
+
+<p><b><i>Conference Papers</i></b></p>
+
+<p>Huang H. and Ameta G., &ldquo;A Bi-level Framework for Estimating
+Manufacturing Energy and Carbon Weights of Turned Parts&rdquo;, Proceedings of
+American Society of Mechanical Engineering-Manufacturing Science and
+Engineering Conference-2009, West Lafayette, IN, USA, Oct 4 - 7.</p>
+
+<p>Ameta G., Huang H. and Mahesh M., &ldquo;A Bi-level Framework for Estimating
+Manufacturing Energy and Carbon Weights of Milled Parts and Assemblies&rdquo;,
+Proceedings of American Society of Mechanical Engineering-International Design
+Engineering Technical Conference-2009/ Computers and Information in
+Engineering-86805, San Deigo, CA, USA, August 30 - September 29.</p>
+
+<p>Ameta G., &ldquo;Design for Sustainability - Overview and Trends&rdquo;, The
+17th International Conference on Engineering Design, 24th -27th August 2009,
+Stanford University, Stanford, CA.</p>
+
+<p>Ameta G., and Hoffmann P., &ldquo;Ontological Model of Tolerances for
+Interoperability in Product Life Cycle&rdquo;, Proc., 11th CIRP Int'l Seminar
+on CAT, March 22-23, 2009, Annecy, France.</p>
+
+<p>Singh G., Ameta G., Davidson J.K. and Shah J.J., &ldquo;Worst-Case Tolerance
+Analysis of a Self-Aligning Coupling Assembly using Tolerance-Maps&rdquo;,
+(<strong>Best Paper Award</strong>) Proc., 11th CIRP Int'l Seminar on CAT,
+March 22-23, 2009, Annecy, France.</p>
+
+<p>Ameta G., &ldquo;Towards a Novel Geometric Metric for Sustainability
+Assessment&rdquo;, PerMis Conference, NIST, Gaithersburg, MD, USA, September
+21st-23rd 2009.</p>
+
+<p>Ameta G., Panchal J. and Pezeshki C., &ldquo;A Collective-Learning Approach
+to Sustainable Design Education&rdquo;, Mudd Design Workshop VII, 28th May
+2009.</p>
+
+<p><b><i>Reports</i></b></p>
+
+<p style="text-align:justify;">Ameta G., Mani M., Rachuri S., Lyons K. W., Shaw F., Sriram R. D., "Carbon Weight Analysis for Machining Operation and Allocation for Redesign", NISTIR 7560, Dec 2009, <A href="http://www.nist.gov/manuscript-publication-search.cfm?pub_id=901525">link</a></p>
+
+
+<h4>2008</h4>
+
+<p><b><i>Book Chapters</i></b></p>
+
+<p style="text-align:justify;">Hoffman P., Feng S.C., Ameta G., Ghodous P., and
+Qiao L., "Towards a Multi-View Semantic Model for Product Feature Description",
+In Collaborative Product and Service Life Cycle Management for a Sustainable
+World, Advanced Concurrent Engineering, (Proc., 15th ISPE Int'l Conference on
+Concurrent Engineering, Belfast, Ireland, August 18-22, 2008), pp. 205-213,
+2008, Springer, Dordrecht, Netherlands.</p>
+
+<p><b><i>Conference Papers</i></b></p>
+
+<p style="text-align:justify;">Mani M., Lyons K.W., Rachuri S., Ameta G.,
+Subrahmanian E., Sriram R.D. and Feng S.C., "Introducing Sustainability early
+into Manufacturing Process Planning", Proceedings of the 14th International
+Conference on Manufacturing Science and Engineering, Evanston, IL, USA, October
+7-10, 2008.</p>
+
+<p style="text-align:justify;">Hoffman P., Feng S.C., Ameta G., Ghodous P., and
+Qiao L., "Towards a Multi-View Semantic Model for Product Feature Description",
+Proc., 15th ISPE Int'l Conference on Concurrent Engineering, Belfast, Ireland,
+August 18-22, 2008.</p>
+
+<p><b><i>Reports</i></b></p>
+
+<p style="text-align:justify;">Ameta G., Rachuri S., Fiorentini X., Mani M., Fenves S. J., Lyons K. W., Sriram R. D., "Extending the Notion of Quality from Physical Metrology to Information and Sustainability", NISTIR 7515, July 2008, <A href="http://www.nist.gov/manuscript-publication-search.cfm?pub_id=824666">link</a></p>
+
+<h4>2007</h4>
+
+<p><b><i>Journal Papers</i></b></p>
+
+<p style="text-align:justify;">Ameta G., Davidson J.K., and Shah J.J., "Using
+Tolerance-Maps to Generate Frequency Distributions of Clearance and Allocate
+Tolerances for Pin-Hole Assemblies", ASME Transaction, Journal of Computing and
+Information Science and Engineering, Vol 7(4), pp 347-359, December 2007.</p>
+
+<p style="text-align:justify;">Ameta G., Davidson J. K., Shah J. J.,
+"Tolerance-Maps Applied to A Point-Line Cluster of Features", ASME Transaction,
+Journal of Mechanical Design, Vol 129(8), August, 2007, pp781-792.</p>
+
+<p style="text-align:justify;">Shah J.J., Ameta G., Shen Z., and Davidson J.K.,
+"Navigating the Tolerance Analysis Maze", Computer Aided Design and
+Applications, Vol 4(5), pp 705-718, 2007.</p>
+
+<p><b><i>Book Chapters</i></b></p>
+
+<p>Bhide, S., Ameta, G., Davidson, J.K., and Shah, J.J. "Tolerance-Maps Applied
+to the Straightness and Orientation of an Axis", In Models for Computer-Aided
+Tolerancing in Design and Manufacturing, (Proc., 9th CIRP Int'l Seminar on CAT,
+April 10-12, 2005, Tempe, AZ, USA), pp. 45-54, 2007, Springer, Dordrecht,
+Netherlands.</p>
+
+<p>Jian A. D., Ameta G., Davidson J. K., Shah J. J., "Tolerance Analysis and
+Allocation using Tolerance-Maps for a Power Saw Assembly", In Models for
+Computer-Aided Tolerancing in Design and Manufacturing, (Proc., 9th CIRP Int'l
+Seminar on CAT, April 10-12, 2005, Tempe, AZ, USA), pp. 45-54, 2007, Springer,
+Dordrecht, Netherlands.</p>
+
+<p><b><i>Conference Papers</i></b></p>
+
+<p>Ameta G., Davidson J. K., Shah J. J., "Statistical Clearance Analysis for
+Tab-Slot Assemblies using Tolerance-Maps", Proceedings of American Society of
+Mechanical Engineering-International Design Engineering Technical
+Conference-2007/ Computers and Information in Engineering-35162, Las Vegas, NV,
+USA, September 4-7.</p>
+
+<p>Ameta G., Davidson J. K., Shah J. J., "Influence of Form on Frequency
+Distributions for 1-D Clearance Which is generated from Tolerance-Maps". 10th
+CIRP conference on Computer Aided Tolerancing, March 21-23, Erlangen, Germany,
+2007.</p>
+
+<h4>2006</h4>
+
+<p><b><i>Thesis</i></b></p>
+<p> Ameta G., <A href="http://search.proquest.com/docview/305357821/abstract/13AB8D315333AA16570/3?accountid=14902">"Statistical tolerance analysis and allocation for assemblies using tolerance-maps"</a>, Ph.D. Dissertation, 2006, Arizona State University, Tempe, AZ.</p>
+
+<p><b><i>Conference Papers</i></b></p>
+
+<p>Ameta G., Davidson J. K., Shah J. J., "Using Tolerance-Maps to generate
+Frequency Distributions of Clearance for Pin-Hole Assemblies", Proceedings of
+American Society of Mechanical Engineering-International Design Engineering
+Technical Conference-2006/Computers and Information in Engineering-99585,
+Philadelphia, PA, USA, September 10-13.</p>
+
+<p><b><i>Posters</i></b></p>
+<p> Ameta G., Davidson J. K., and Shah J.J., "Poster:Mathematical Model to Formalize Tolerance Specifications and Enable Full 3D Tolerance Analysis", NSF-DMII Grantees Conference, St. Louis, MO, 2006. </p>
+
+<h4>2005</h4>
+
+<p><b><i>Journal Papers</i></b></p>
+
+<p>Shen Z., Ameta G., Shah J. J. and Davidson J. K., "A Comparative Study of
+Tolerance Analysis Methods", Journal of Computing and Information Science in
+Engineering, Vol. 5(3), September 2005, pp247-256. </p>
+
+<p><b><i>Conference Papers</i></b></p>
+
+<p>Ameta G., Davidson J. K., Shah J. J., "Allocating Tolerance Statistically
+with Tolerance-Maps and Beta Distributions: The Target A Planar Face",
+Proceedings of American Society of Mechanical Engineering-International Design
+Engineering Technical Conference-2005/Design Automation Conference-85122, Long
+Beach, California, USA, September 24-28</p>
+
+<p>Ameta G., Davidson J. K., Shah J. J., "Tolerance-Maps Applied to A
+Point-Line Cluster of Features", Proceedings of American Society of Mechanical
+Engineering-International Design Engineering Technical Conference-2005/Design
+Automation Conference-85115, Long Beach, California, USA, September 24-28.</p>
+
+<p>Bhide, S., Ameta, G., Davidson, J.K., and Shah, J.J. "Tolerance-Maps Applied
+to the Straightness and Orientation of an Axis", Proc., 9th CIRP Int'l Seminar
+on CAT, April 10-12, 2005, Tempe, AZ, USA</p>
+
+<p>Jian A. D., Ameta G., Davidson J. K., Shah J. J., "Tolerance Analysis and
+Allocation using Tolerance-Maps for a Power Saw Assembly", Proc., 9th CIRP
+Int'l Seminar on CAT, April 10-12, 2005, Tempe, AZ, USA</p>
+
+<p><b><i>Posters</i></b></p>
+<p> Shen Z., Ameta G., Davidson J. K., and Shah J.J., "Poster:Mathematical Model to Formalize Tolerance Specifications and Enable Full 3D Tolerance Analysis", NSF-DMII Grantees Conference, Scottsdalte, AZ, 2005. </p>
+
+<h4>2004</h4>
+
+<p><b><i>Thesis</i></b></p>
+<p> Ameta G., "Tolerance-Maps applied to angled faces and two clusters of features", MS Thesis, 2004, Arizona State University, Tempe, AZ.
+
+<p><b><i>Conference Papers</i></b></p>
+
+<p>Ameta G., Davidson J. K., Shah J. J., "The Effects of Different
+Specifications on the Tolerance-Maps For An Angled Face", Proceedings of ASME
+2004, Design Automation Conference, Salt Lake City, Utah, USA, September
+28-October 2, Paper No. 57199</p>
+
+<p>Shen Z., Ameta G., Davidson J. K., Shah J. J., "A Comparative Study of Tolerance Analysis Methods"
+Proceedings of ASME 2004, 24th Computers and Information in Engineering Conference, Salt Lake City, Utah, USA, September
+28-October 2.</p>
+
+<p><b><i>Posters</i></b></p>
+<p>Shen Z., Ameta G., Davidson J. K., and Shah J.J., "Poster:Mathematical Model to Formalize Tolerance Specifications and Enable Full 3D Tolerance Analysis", NSF-DMII Grantees Conference, Dallas, TX, 2004.
+</div>
+
+<div id="additional">
+<h2>Heading using the h3 tag</h2>
+
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+</div>
+
+<div id="localfooter">
+<p><a href="http://mme.wsu.edu">School of Mechanical and Materials
+Engineering</a>, PO Box 642920, Washington State University, Pullman WA
+99164-2920, 509-335-8218, <a href="mailto:#">Contact Us</a></p>
+</div>
+</div>
+<!--Beginning of the WSU Global Footer Zone. Refer to www.wsu.edu/identity/ for more information. -->
+</div>
+
+<noscript>
+
+<div id="wsufooter">
+Copyright © Board of Regents, <a href="http://www.wsu.edu">Washington State
+University</a></div>
+</noscript>
+<script type="text/javascript" language="javascript">
+var strFooter;strFooter = getFooter();document.write(strFooter);</script>
+<!--End of the WSU Global Footer Zone. -->
+<!--The code below is for the print tool in the toolbar-->
+<script type="text/javascript">
+   // To display the "Print" link pass in true.  To hide the "Print" link pass in false.
+   addPrintLink(true);</script>
+</body>
+</html>

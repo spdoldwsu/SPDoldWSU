@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="iso-8859-1"?> 
+<news> 
+<record> 
+	<title1>Learn advanced concepts about AJAX and Remote Scripting. Visit DevArticles.com now!</title1> 
+	<url>http://www.devarticles.com</url> 
+	<contributors><authors><author>Yogvit</author>
+	<author>Divyansh</author>
+	<author>Usha</author>
+	<author>Gaurav</author></authors></contributors>
+	<years><year>2009</year></years>
+</record> 
+<record> 
+	<title1>PHP 5.1 now presents new key improvements such as PDO (PHP Data Objects)</title1> 
+	<url>http://www.php.net</url> 
+	<author>Usha Ameta</author>
+	<author>Prateek</author>
+	<year>2009</year>
+</record> 
+<record> 
+	<title1>Google to continue extending its GoogleMaps API</title1> 
+	<url>http://www.google.com/apis/maps/documentation/</url> 
+	<author>Ameta, Divyansh</author>
+	<author>Usha</author>
+	<year>2009</year>
+</record> 
+<record> 
+	<title1>MySQL releases Open Source Database Tools for Macintosh <a itxtdid="2592427" target="_blank" href="http://www.devarticles.com/#" style="border-bottom: 0.075em solid blue; text-decoration: underline; color: blue; background-color: transparent; padding-bottom: 1px;" class="iAs">OS</a> X</title1> 
+	<url>http://www.mysql.com</url> 
+	<author>Usha</author>
+	<author>Gaurav</author>
+	<year>2009</year>
+</record> 
+<record> 
+	<title1>Release of Flash Player 8 allows to develop richer applications and communications</title1> 
+	<url>http://www.macromedia.com</url> 
+	<author>Yogvit</author>
+	<author>Gaurav</author>
+	<year>2009</year>
+</record> 
+<record> 
+	<title1>PHP introduces more improvements in regards to SOAP, streams and SPL</title1> 
+	<url>http://www.php.net</url> 
+	<author>Usha</author>
+	<author>Divyansh</author>
+	<year>2009</year>
+</record> </news>
