@@ -324,6 +324,10 @@ function build_graph(source){
 		node,
 		link,
 		root;
+	link.attr("x1",0);
+	link.attr("y1",0);
+	link.attr("x2",0);
+	link.attr("y2",0);
 
     var force = d3.layout.force()
         .size([width, height])
