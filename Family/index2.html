@@ -242,8 +242,8 @@ function build_graph(source){
     // Filter edges and compute the distinct nodes from the links
     source.forEach(function(link){
         if (link.type == 'isWifeOf' || link.type == 'isMotherOf' || link.type == 'isFatherOf'){
-            link.source = nodes[link.source] || (nodes[link.source] = {name: link.source});
-            link.target = nodes[link.target] || (nodes[link.target] = {name: link.target});
+            link.source = nodes[link.source] || (nodes[link.source] = {name: link.source, level:0});
+            link.target = nodes[link.target] || (nodes[link.target] = {name: link.target, level:0});
             edges.push(link);
             counter++;
             if(link.type == 'isFatherOf')
@@ -273,12 +273,10 @@ function build_graph(source){
 	var index = 0, nodesize, hasparentNodesize;
 	nodessize = GetObjectSize(nodes);
 	hasparentNodesize = GetObjectSize(hasparentNodesize);
-	for (ii = 0; ii<nodessize; ii++){
-		nodes[ii].level = 0;
-	}
 
-   	for (ii = 0; ii<nodessize; ii++){
-   		if (!(nodes[ii] in hasparentNode)){
+
+   	for (var p1 in nodes){
+   		if (!(p1 in hasparentNode)){
    			var link={};
            	link.type = 'isFatherOf';
 			link.source = nodes["ii0000"] || (nodes["ii0000"] = {name: "ii0000"});
@@ -289,8 +287,8 @@ function build_graph(source){
 		}
 		else{
 			getlevel = getparentlevel(p1,1,hasparentNode);
-			if(nodes[ii].level<level)
-				nodes[ii].level = level;
+			if(p1.level<level)
+				p1.level = level;
 		}
 		index = index + 1;
 	}
@@ -305,12 +303,19 @@ function build_graph(source){
 	}
 
 	function getparentlevel(p1,index1,hasparentNode){
-		for(jj=0;jj<hasparentNodesize;jj++){
-			if(hasparentNode[jj].name==p1.name){
-				index1 = getparentlevel(hasparentNode[jj],index1+1,hasparentNode);
-				break;
+		if(p1 in hasparentNode){
+				var index2[]=index1, iter=0;
+		 		source.forEach(function(link){
+					if(link.type == 'isFatherOf'){
+						if(link.source == p1){
+		 					index2[iter] = getparentlevel(nodes[link.target],index1+1,hasparentNode);
+						}
+					}
+					iter++;
+				}
+				if(Math.max.apply(Math, index2)>index1)
+					index1 = Math.max.apply(Math, index2);
 			}
-		}
 		return index1;
 	}
 
