@@ -303,7 +303,7 @@ function build_graph(source){
    		if (!(p1 in hasparentNode)){
    			var link={};
            	link.type = 'isFatherOf';
-			link.source = 'Root';
+			link.source = (nodes["Root"] = {name: "Root"});
 			link.target = p1;
 
 			edges.push(link);
