@@ -179,12 +179,22 @@ var rel2col = {
     'isSecondCousinOf':'#f00',
     'isThirdCousinOf':'#f00'
 };
+
+var width = 960,
+    height = 500,
+    node,
+    link,
+    root;
+
 var xmlhttp = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject("Microsoft.XMLHTTP");
 xmlhttp.onreadystatechange = function(){
     if (xmlhttp.readyState == 4){
         if (xmlhttp.status == 200){
 
             var source = JSON.parse(xmlhttp.responseText);
+  	          root = source;
+			  root.fixed = true;
+  			root.px = root.py = 0;
             build_graph(source);
 
         } else alert("Error loading data!");
@@ -299,8 +309,9 @@ function build_graph(source){
 			edges.push(link);
 			counter++;
 		}
-	}
 
+	}
+	labels["ii0000"]="Root";
 	//nodes.push({"name":"Root"});
 
 
@@ -433,5 +444,55 @@ function build_graph(source){
     for (var i = 5000; i > 0; --i) force.tick();
     force.stop();
 }
+
+// Returns a list of all nodes under the root.
+//
+// Also assign each node a reasonable starting x/y position: we can do better than random placement since we're force-layout-ing a hierarchy!
+function flatten(root) {
+  var nodes = [], i = 0, depth = 0, level_widths = [1], max_width, max_depth = 1, kx, ky;
+
+  function recurse(node, parent, depth, x) {
+    if (node.children) {
+      var w = level_widths[depth + 1] || 0;
+      level_widths[depth + 1] = w + node.children.length;
+      max_depth = Math.max(max_depth, depth + 1);
+      node.size = node.children.reduce(function(p, v, i) {
+        return p + recurse(v, node, depth + 1, w + i);
+      }, 0);
+    }
+    if (!node.id) node.id = ++i;
+    node.parent = parent;
+    node.depth = depth;
+    if (!node.px) {
+      node.y = depth;
+      node.x = x;
+    }
+    nodes.push(node);
+    return node.size;
+  }
+
+  root.size = recurse(root, null, 0);
+
+  // now correct/balance the x positions:
+  max_width = 1;
+  for (i = level_widths.length; --i > 0; ) {
+    max_width = Math.max(max_width, level_widths[i]);
+  }
+  kx = (width - 20) / max_width;
+  ky = (height - 20) / max_depth;
+  for (i = nodes.length; --i >= 0; ) {
+    var node = nodes[i];
+    if (!node.px) {
+      node.y *= ky;
+      node.y += 10 + ky / 2;
+      node.x *= kx;
+      node.x += 10 + kx / 2;
+    }
+  }
+
+  return nodes;
+}
+
+
 </script>
 </html>
