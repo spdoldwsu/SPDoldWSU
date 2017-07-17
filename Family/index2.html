@@ -203,19 +203,6 @@ document.location.hash ? hash_redraw_react() : document.location.replace('#en');
 
 if (window.File && window.FileReader && window.FileList && window.Blob){
 
-    var reader = new FileReader();
-    fileapi.onchange = function(){
-        if (!this.files[0] || !this.files[0].size) return alert("Error: file cannot be read (unaccessible?)");
-        reader.currentFilename = this.files[0].name;
-        reader.readAsText(this.files[0]);
-    }
-    reader.onloadend = function(evt){
-        var str = evt.target.result;
-        if (str.indexOf('"type": "label",') > 7){
-            var source = JSON.parse(str);
-            build_graph(source);
-        } else return alert("Error: the file format is not supported!");
-    }
 }
 
 function hash_redraw_react(){
@@ -285,7 +272,7 @@ function build_graph(source){
     // finally delete the root node
 	index = 0;
 	for (var p1 in nodes){
-	nodes[nodes.indexof(p1)].level = 0;
+	nodes[nodes.findIndex(p1)].level = 0;
 	}
 
    	for (var p1 in nodes){
@@ -294,14 +281,14 @@ function build_graph(source){
            	link.type = 'isFatherOf';
 			link.source = (nodes["ii0000"] = {name: "ii0000"});
 			link.target = p1;
-			nodes[nodes.indexof(p1)].level = 1;
+			nodes[nodes.findIndex(p1)].level = 1;
 			edges.push(link);
 			counter++;
 		}
 		else{
 			getlevel = getparentlevel(p1,1,hasparentNode);
-			if(nodes[nodes.indexof(p1)].level<level)
-				nodes[nodes.indexof(p1)].level = level;
+			if(nodes[nodes.findIndex(p1)].level<level)
+				nodes[nodes.findIndex(p1)].level = level;
 		}
 		index = index + 1;
 	}
@@ -310,7 +297,7 @@ function build_graph(source){
 
 	function getparentlevel(p1,index1,hasparentNode){
 		if(p1 in hasparentNode)
-			index1 = getparentlevel(hasparentNode[hasparentNode.indexof(p1)],index1+1,hasparentNode);
+			index1 = getparentlevel(hasparentNode[hasparentNode.findIndex(p1)],index1+1,hasparentNode);
 
 		return index1;
 	}
