@@ -137,18 +137,18 @@ transform: rotate(45deg);
 </head>
 <body>
 <div id="mmreasoner_legend">
-    <div style="width:100%;text-align:center;"><b><span class="i18n i18n_ru">???????????</span><span class="i18n i18n_en">Legend</span></b>:</div>
+    <div style="width:100%;text-align:center;"><b><span class="i18n i18n_en">Legend</span></b>:</div>
     <ul>
-        <li><span style="font-size:2em;color:#f09;">&rarr;</span> <span class="i18n i18n_ru">????? ???? &mdash; ????</span><span class="i18n i18n_en">Mother-children links</span></li>
-        <li><span style="font-size:2em;color:#09f;">&rarr;</span> <span class="i18n i18n_ru">????? ???? &mdash; ????</span><span class="i18n i18n_en">Father-children links</span></li>
-        <li><span style="font-size:2em;color:#fc6;">&mdash;</span> <span class="i18n i18n_ru">??????? ?????</span><span class="i18n i18n_en">Marriage links</span></li>
-        <li style="color:#06f;"><span class="leg_circ" style="background:#06f;"></span><span class="i18n i18n_ru">???? ? ?????</span><span class="i18n i18n_en">Grandparent</span></li>
-        <li style="color:#6cf;"><span class="leg_circ" style="background:#6cf;"></span><span class="i18n i18n_ru">??????? ? ????????</span><span class="i18n i18n_en">Great-grandparent</span></li>
-        <li style="color:#396;"><span class="leg_circ" style="background:#396;"></span><span class="i18n i18n_ru">?????</span><span class="i18n i18n_en">Grandchildren</span></li>
-        <li style="color:#9c6;"><span class="leg_circ" style="background:#9c6;"></span><span class="i18n i18n_ru">????????</span><span class="i18n i18n_en">Great-grandchildren</span></li>
-        <li style="color:#90c;"><span class="leg_circ" style="background:#90c;"></span><span class="i18n i18n_ru">?????? ? ?????</span><span class="i18n i18n_en">Uncles and aunts</span></li>
-        <li style="color:#f90;"><span class="leg_circ" style="background:#f90;"></span><span class="i18n i18n_ru">?????????? ? ??????????</span><span class="i18n i18n_en">Nephews and nieces</span></li>
-        <li style="color:#f00;"><span class="leg_circ" style="background:#f00;"></span><span class="i18n i18n_ru">??????, ??????, ??????</span><span class="i18n i18n_en">Brothers, sisters, cousins</span></li>
+        <li><span style="font-size:2em;color:#f09;">&rarr;</span> <span class="i18n i18n_en">Mother-children links</span></li>
+        <li><span style="font-size:2em;color:#09f;">&rarr;</span> <span class="i18n i18n_en">Father-children links</span></li>
+        <li><span style="font-size:2em;color:#fc6;">&mdash;</span><span class="i18n i18n_en">Marriage links</span></li>
+        <li style="color:#06f;"><span class="leg_circ" style="background:#06f;"></span><span class="i18n i18n_en">Grandparent</span></li>
+        <li style="color:#6cf;"><span class="leg_circ" style="background:#6cf;"></span><span class="i18n i18n_en">Great-grandparent</span></li>
+        <li style="color:#396;"><span class="leg_circ" style="background:#396;"></span><span class="i18n i18n_en">Grandchildren</span></li>
+        <li style="color:#9c6;"><span class="leg_circ" style="background:#9c6;"></span><span class="i18n i18n_en">Great-grandchildren</span></li>
+        <li style="color:#90c;"><span class="leg_circ" style="background:#90c;"></span><span class="i18n i18n_en">Uncles and aunts</span></li>
+        <li style="color:#f90;"><span class="leg_circ" style="background:#f90;"></span><span class="i18n i18n_en">Nephews and nieces</span></li>
+        <li style="color:#f00;"><span class="leg_circ" style="background:#f00;"></span><span class="i18n i18n_en">Brothers, sisters, cousins</span></li>
     </ul>
 </div>
 
@@ -289,7 +289,7 @@ function build_graph(source){
    		if (!(p1 in hasparentNode)){
    			var link={};
            	link.type = 'isFatherOf';
-			link.source = (nodes["Root"] = {name: "Root"});
+			link.source = (nodes["ii0000"] = {name: "ii0000"});
 			link.target = p1;
 
 			edges.push(link);
@@ -297,8 +297,8 @@ function build_graph(source){
 		}
 
 	}
-	labels["ii0000"]="Root";
-	//nodes.push({"name":"Root"});
+	labels["ii0000"]=html2utf("Root");
+
 
 
 
