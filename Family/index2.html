@@ -288,25 +288,18 @@ function build_graph(source){
     // add a node root as father of them
     // Then position all nodes accordingly
     // finally delete the root node
-   	var Fail = false;
-   	d3.nodes.push({"id":Root});
+
+
    	for (var p1 in nodes){
-   		for (var p2 in hasparentNode){
-           if(p1=p2){
-           		fail = true;
-           		break;
-           		}
-           	}
-		if(fail == true){
-			link.type = 'isFatherOf';
+   		if (!(p1 in hasparentNode)){
+           	link.type = 'isFatherOf';
 			link.source = 'Root';
 			link.target = p1;
 			edges.push(link);
-			fail = false;
 			counter++;
 		}
-
-    }
+	}
+	d3.nodes.push({"id":Root});
 
     var table = {};
     var i=0;
