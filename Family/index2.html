@@ -271,8 +271,7 @@ function build_graph(source){
     // Then position all nodes accordingly
     // finally delete the root node
 	var index = 0, nodesize, hasparentNodesize;
-	nodessize = GetObjectSize(nodes);
-	hasparentNodesize = GetObjectSize(hasparentNodesize);
+
 
 
    	for (var p1 in nodes){
@@ -304,7 +303,7 @@ function build_graph(source){
 
 	function getparentlevel(p1,index1,hasparentNode){
 		if(p1 in hasparentNode){
-				var index2[]=index1, iter=0;
+				var index2=[], iter=0;
 		 		source.forEach(function(link){
 					if(link.type == 'isFatherOf'){
 						if(link.source == p1){
