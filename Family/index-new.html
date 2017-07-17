@@ -300,7 +300,7 @@ function build_graph(source){
 					link.py = link.y = py + link.depth * ly + r;
 				  }
 
-				  // #1a: constraint all nodes to the visible screen: links
+				/*  // #1a: constraint all nodes to the visible screen: links
 				  dx = Math.min(0, width - r - link.x) + Math.max(0, r - link.x);
 				  dy = Math.min(0, height - r - link.y) + Math.max(0, r - link.y);
 				  link.x += 2 * Math.max(-ly, Math.min(ly, dx));
@@ -310,7 +310,7 @@ function build_graph(source){
 				  dy = Math.min(0, height - r - link.py) + Math.max(0, r - link.py);
 				  link.px += 2 * Math.max(-ly, Math.min(ly, dx));
 				  link.py += 2 * Math.max(-ly, Math.min(ly, dy));
-
+*/
 				  // #2: hierarchy means childs must be BELOW parents in Y direction:
 				  if (link.parent) {
 					link.y = Math.max(link.y, link.parent.y + ly);
