@@ -292,29 +292,29 @@ function build_graph(source){
         }
 
 			// #1.0: hierarchy: same level nodes have to remain with a 1 LY band vertically:
-				  if (d.children || d._children) {
+				  if (link.children || link._children) {
 					var py = 0;
-					if (d.parent) {
-					  py = d.parent.y;
+					if (link.parent) {
+					  py = link.parent.y;
 					}
-					d.py = d.y = py + d.depth * ly + r;
+					link.py = link.y = py + link.depth * ly + r;
 				  }
 
 				  // #1a: constraint all nodes to the visible screen: links
-				  dx = Math.min(0, width - r - d.x) + Math.max(0, r - d.x);
-				  dy = Math.min(0, height - r - d.y) + Math.max(0, r - d.y);
-				  d.x += 2 * Math.max(-ly, Math.min(ly, dx));
-				  d.y += 2 * Math.max(-ly, Math.min(ly, dy));
+				  dx = Math.min(0, width - r - link.x) + Math.max(0, r - link.x);
+				  dy = Math.min(0, height - r - link.y) + Math.max(0, r - link.y);
+				  link.x += 2 * Math.max(-ly, Math.min(ly, dx));
+				  link.y += 2 * Math.max(-ly, Math.min(ly, dy));
 				  // #1b: constraint all nodes to the visible screen: charges ('repulse')
-				  dx = Math.min(0, width - r - d.px) + Math.max(0, r - d.px);
-				  dy = Math.min(0, height - r - d.py) + Math.max(0, r - d.py);
-				  d.px += 2 * Math.max(-ly, Math.min(ly, dx));
-				  d.py += 2 * Math.max(-ly, Math.min(ly, dy));
+				  dx = Math.min(0, width - r - link.px) + Math.max(0, r - link.px);
+				  dy = Math.min(0, height - r - link.py) + Math.max(0, r - link.py);
+				  link.px += 2 * Math.max(-ly, Math.min(ly, dx));
+				  link.py += 2 * Math.max(-ly, Math.min(ly, dy));
 
 				  // #2: hierarchy means childs must be BELOW parents in Y direction:
-				  if (d.parent) {
-					d.y = Math.max(d.y, d.parent.y + ly);
-					d.py = Math.max(d.py, d.parent.py + ly);
+				  if (link.parent) {
+					link.y = Math.max(link.y, link.parent.y + ly);
+					link.py = Math.max(link.py, link.parent.py + ly);
 		  }
     });
 
