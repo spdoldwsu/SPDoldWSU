@@ -271,11 +271,13 @@ function build_graph(source){
     // Then position all nodes accordingly
     // finally delete the root node
 	index = 0;
-	for (ii = 0; ii<object.keys(nodes).length; ii++){
+	nodessize = GetObjectSize(nodes);
+	hasparentNodesize = GetObjectSize(hasparentNodesize);
+	for (ii = 0; ii<nodessize; ii++){
 		nodes[ii].level = 0;
 	}
 
-   	for (ii = 0; ii<object.keys(nodes).length; ii++){
+   	for (ii = 0; ii<nodessize; ii++){
    		if (!(nodes[ii] in hasparentNode)){
    			var link={};
            	link.type = 'isFatherOf';
@@ -294,9 +296,16 @@ function build_graph(source){
 	}
 	labels["ii0000"]=html2utf("Root");
 
+	function GetObjectSize(obj) {
+		var size = 0, key;
+		for (key in obj) {
+			if (obj.hasOwnProperty(key)) size++;
+		}
+   		return size;
+	}
 
 	function getparentlevel(p1,index1,hasparentNode){
-		for(jj=0;jj<object.keys(hasparentNode).length;jj++){
+		for(jj=0;jj<hasparentNodesize;jj++){
 			if(hasparentNode[jj].name==p1.name){
 				index1 = getparentlevel(hasparentNode[jj],index1+1,hasparentNode);
 				break;
