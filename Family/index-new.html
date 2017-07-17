@@ -319,6 +319,11 @@ function build_graph(source){
         .attr("orient", "auto")
         .append("polyline")
         .attr("points", "0,0 40,10 0,20 10,10");
+	var width = 960,
+		height = 500,
+		node,
+		link,
+		root;
 
     var force = d3.layout.force()
         .size([width, height])
