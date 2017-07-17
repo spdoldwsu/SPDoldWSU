@@ -363,11 +363,15 @@ function build_graph(source){
 	var drag = force.drag()
 			    .on("dragstart", function(d){
 			      d3.select(this).classed("fixed", d.fixed = true);
+		update();
        });
+
 function circle_radius(d) {
   return d.children ? 4.5 : Math.sqrt(d.size) / 10;
 }
     function update(nodes) {
+    root.fixed = 0;
+    root.px=root.py = 0;
 	  var nodes = flatten(root);
 	  var links = d3.layout.hierarchy().links(nodes);
 
