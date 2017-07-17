@@ -270,7 +270,7 @@ function build_graph(source){
     // add levels to each node
     // Then position all nodes accordingly
     // finally delete the root node
-	index = 0;
+	var index = 0, nodesize, hasparentNodesize;
 	nodessize = GetObjectSize(nodes);
 	hasparentNodesize = GetObjectSize(hasparentNodesize);
 	for (ii = 0; ii<nodessize; ii++){
