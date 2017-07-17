@@ -288,17 +288,19 @@ function build_graph(source){
     // add a node root as father of them
     // Then position all nodes accordingly
     // finally delete the root node
-	source.forEach(function(link){
+
    	for (var p1 in nodes){
    		if (!(p1 in hasparentNode)){
+   			var link;
            	link.type = 'isFatherOf';
 			link.source = 'Root';
 			link.target = p1;
+
 			edges.push(link);
 			counter++;
 		}
 	}
-	});
+
 	nodes.push({"name":"Root"});
 
     var table = {};
