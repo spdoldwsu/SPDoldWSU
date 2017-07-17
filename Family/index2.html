@@ -308,7 +308,7 @@ function build_graph(source){
 	labels["ii0000"]=html2utf("Root");
 
 
-	function int getparentlevel(p1,index1,hasparentNode){
+	function getparentlevel(p1,index1,hasparentNode){
 		if(p1 in hasparentNode)
 			index1 = getparentlevel(hasparentNode[hasparentNode.indexof(p1)],index1+1,hasparentNode);
 
