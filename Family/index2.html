@@ -150,14 +150,8 @@ transform: rotate(45deg);
         <li style="color:#f90;"><span class="leg_circ" style="background:#f90;"></span><span class="i18n i18n_ru">?????????? ? ??????????</span><span class="i18n i18n_en">Nephews and nieces</span></li>
         <li style="color:#f00;"><span class="leg_circ" style="background:#f00;"></span><span class="i18n i18n_ru">??????, ??????, ??????</span><span class="i18n i18n_en">Brothers, sisters, cousins</span></li>
     </ul>
-    <div style="width:100%;text-align:center;"><b><span class="i18n i18n_ru">????</span><span class="i18n i18n_en">Language</span></b>: <a href="#en" style="font-size:1.2em;">EN</a> <a href="#ru" style="font-size:1.2em;">RU</a></div>
-    <div id="fileapi_container"><button><span class="i18n i18n_ru">????????? ???????????</span><span class="i18n i18n_en">Upload genealogy</span></button><input type="file" id="fileapi" /></div>
 </div>
-<div class="github-fork-ribbon-wrapper right">
-    <div class="github-fork-ribbon">
-        <a href="https://github.com/blokhin/genealogical-trees" target="_top">See on GitHub</a>
-    </div>
-</div>
+
 </body>
 <script type="text/javascript">
 var rel2col = {
@@ -228,15 +222,7 @@ if (window.File && window.FileReader && window.FileList && window.Blob){
 
 function hash_redraw_react(){
     var hash = document.location.hash.substr(1);
-    if (hash == 'ru'){
-        var i18n = document.getElementsByClassName('i18n'), i18n_ru = document.getElementsByClassName('i18n_ru');
-        for (var i=0, i18n_len=i18n.length; i < i18n_len; i++){
-            i18n[i].style.display = 'none';
-        }
-        for (var i=0, i18n_ru_len=i18n_ru.length; i < i18n_ru_len; i++){
-            i18n_ru[i].style.display = 'inline-block';
-        }
-    } else {
+
         var i18n = document.getElementsByClassName('i18n'), i18n_en = document.getElementsByClassName('i18n_en');
         for (var i=0, i18n_len=i18n.length; i < i18n_len; i++){
             i18n[i].style.display = 'none';
@@ -244,7 +230,7 @@ function hash_redraw_react(){
         for (var i=0, i18n_en_len=i18n_en.length; i < i18n_en_len; i++){
             i18n_en[i].style.display = 'inline-block';
         }
-    }
+
 }
 
 function html2utf(s){
