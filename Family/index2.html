@@ -280,7 +280,7 @@ function build_graph(source){
            	link.type = 'isFatherOf';
 			link.source = nodes["ii0000"] || (nodes["ii0000"] = {name: "ii0000"});
 			link.target = p1;
-			nodes[p1.name].level = 1;
+			nodes[link.target].level = 1;
 			edges.push(link);
 			counter++;
 		}
