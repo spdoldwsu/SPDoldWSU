@@ -291,7 +291,7 @@ function build_graph(source){
 
    	for (var p1 in nodes){
    		if (!(p1 in hasparentNode)){
-   			var link;
+   			var link={};
            	link.type = 'isFatherOf';
 			link.source = 'Root';
 			link.target = p1;
