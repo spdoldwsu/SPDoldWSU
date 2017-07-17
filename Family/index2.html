@@ -279,7 +279,7 @@ function build_graph(source){
    		if (!(nodes[ii] in hasparentNode)){
    			var link={};
            	link.type = 'isFatherOf';
-			link.source = (nodes["ii0000"] || nodes["ii0000"] = {name: "ii0000"});
+			link.source = nodes["ii0000"] || (nodes["ii0000"] = {name: "ii0000"});
 			link.target = p1;
 			nodes[ii].level = 1;
 			edges.push(link);
