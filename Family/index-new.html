@@ -310,9 +310,9 @@ function build_graph(source){
     var force = d3.layout.force()
         .size([width, height])
         .nodes(d3.values(nodes)).links(edges)
-        //.linkDistance(80)
+
         .gravity(0.3)
-        //.charge(-2500)
+
         .on("tick", tick)
         .charge(function(d) {
 		      return d._children ? -d.size / 100 : d.children ? -100 : -30;
@@ -320,14 +320,6 @@ function build_graph(source){
 		.linkDistance(function(d) {
 		      return d.target._children ? 50 : 30;
 		    })
-
-        //.start();
-
-    //var drag = force.drag()
-    //    .on("dragstart", function(d){
-    //        d3.select(this).classed("fixed", d.fixed = true);
-       //});
-
 
     function update(nodes) {
 	  var nodes = flatten(root);
