@@ -202,8 +202,6 @@ window.onhashchange = hash_redraw_react;
 document.location.hash ? hash_redraw_react() : document.location.replace('#en');
 
 if (window.File && window.FileReader && window.FileList && window.Blob){
-    var fileapi = document.getElementById('fileapi'), fileapi_container = document.getElementById('fileapi_container');
-    fileapi_container.style.display = 'block';
 
     var reader = new FileReader();
     fileapi.onchange = function(){
@@ -261,7 +259,7 @@ function build_graph(source){
             link.target = nodes[link.target] || (nodes[link.target] = {name: link.target});
             edges.push(link);
             counter++;
-            if(link.type=='isFatherOf')
+            if(link.type == 'isFatherOf')
             {
             	hasparentNode[parentcounter]=link.target;
             	parentcounter++;
@@ -282,8 +280,13 @@ function build_graph(source){
 
     // find node that does not have a father
     // add a node root as father of them
+    // add levels to each node
     // Then position all nodes accordingly
     // finally delete the root node
+	index = 0;
+	for (var p1 in nodes){
+	nodes[nodes.indexof(p1)].level = 0;
+	}
 
    	for (var p1 in nodes){
    		if (!(p1 in hasparentNode)){
@@ -291,15 +294,26 @@ function build_graph(source){
            	link.type = 'isFatherOf';
 			link.source = (nodes["ii0000"] = {name: "ii0000"});
 			link.target = p1;
-
+			nodes[nodes.indexof(p1)].level = 1;
 			edges.push(link);
 			counter++;
 		}
-
+		else{
+			getlevel = getparentlevel(p1,1,hasparentNode);
+			if(nodes[nodes.indexof(p1)].level<level)
+				nodes[nodes.indexof(p1)].level = level;
+		}
+		index = index + 1;
 	}
 	labels["ii0000"]=html2utf("Root");
 
 
+	function int getparentlevel(p1,index1,hasparentNode){
+		if(p1 in hasparentNode)
+			index1 = getparentlevel(hasparentNode[hasparentNode.indexof(p1)],index1+1,hasparentNode);
+
+		return index1;
+	}
 
 
 
