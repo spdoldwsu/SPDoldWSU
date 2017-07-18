@@ -290,7 +290,7 @@ function build_graph(source){
 			counter++;
 		}
 		else{*/
-			getlevel = getparentlevel(p1,1,hasparentNode);
+			getlevel = getparentlevel(p1,0,hasparentNode);
 			if(nodes[p1].level<getlevel)
 				nodes[p1].level = getlevel;
 		//}
@@ -311,10 +311,11 @@ function build_graph(source){
 		}
 	});
 
-	source.forEach(function(link){
-	if(nodes[link.source.name]!=undefined)
-		labels[link.source.name]  = labels[link.source.name] + nodes[link.source.name].level.toString();
-	});
+//	source.forEach(function(link){
+//	if(nodes[link.source.name]!=undefined)
+//		labels[link.source.name]  = labels[link.source.name] + nodes[link.source.name].level.toString();
+//
+//	});
 
 	for (var p1 in nodes){
 		if(nodes[p1].level==1){
