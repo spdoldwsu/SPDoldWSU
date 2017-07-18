@@ -336,17 +336,22 @@ function build_graph(source){
 				}
 		}
 		if(found==false){
-				var index2=[], iter=0;
+				var iter=0;
+				var index4 = index1;
 		 		source.forEach(function(link){
+		 			var index3;// = index1;
+
 					if(link.type == 'isFatherOf'||link.type=='isMotherOf'){
 						if(link.source.name == p1){
-		 					index2[iter] = getparentlevel(nodes[link.target.name],index1+1,hasparentNode);
+		 					index3 = getparentlevel(nodes[link.target.name],index1+1,hasparentNode);
+		 					if(index3>index4)
+		 						index4 = index3;
 						}
 					}
 					iter++;
 				});
-				if(Math.max.apply(Math, index2)>index1)
-					index1 = Math.max.apply(Math, index2);
+				if(index4>index1)
+					index1 = index4;
 			}
 		return index1;
 	}
