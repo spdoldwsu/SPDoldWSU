@@ -575,6 +575,9 @@ function build_graph(source){
         return "M" + d.source.x + "," + d.source.y + " " + d.target.x + "," + d.target.y;
     }
 
+	function circle_radius(){
+		return 5;
+		}
     function transform(d) {
     	//return "translate("+d.x+","+d.level*100+d.y+")";
         return "translate(" + d.x + "," + d.y + ")";
