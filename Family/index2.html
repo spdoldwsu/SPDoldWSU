@@ -276,7 +276,7 @@ function build_graph(source){
 
    	for (var p1 in nodes){
    		for(var p2 in hasparentNode){
-   			if(p1==p2.name)
+   			if(p1==hasparentNode[p2].name)
    				found=true;
    				break;
    		}
