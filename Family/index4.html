@@ -356,7 +356,6 @@ function build_graph(source){
 	    .attr("y2", function(d) { return d.target.y; });
 
 	circle
-		.each(function(d) { d.source.y -= k, d.target.y += k; })
 		.attr("cx", function(d) { return d.x; })
         .attr("cy", function(d) { return d.y; });
 
@@ -364,9 +363,9 @@ function build_graph(source){
 		.attr("cx", function(d) { return d.x; })
         .attr("cy", function(d) { return d.y; });
 
-        path.attr("d", direct);
-        circle.attr("transform", transform);
-        text.attr("transform", transform);
+     //   path.attr("d", direct);
+     //   circle.attr("transform", transform);
+     //   text.attr("transform", transform);
     }
 
     function direct(d) {
