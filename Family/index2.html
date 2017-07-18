@@ -304,10 +304,11 @@ function build_graph(source){
 			nodes[link.target.name].level = nodes[link.source.name].level;
 		else
 			nodes[link.source.name].level = nodes[link.target.name].level;
-			}
+		}
 	else if(link.type=='isMotherOf'||link.type=='isFatherOf'){
 		if((nodes[link.source.name].level+1)!=nodes[link.target.name].level)
 			nodes[link.target.name].level = nodes[link.source.name].level+1;
+		}
 	});
 
 	for (var p1 in nodes){
