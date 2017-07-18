@@ -312,7 +312,7 @@ function build_graph(source){
 	});
 
 	source.forEach(function(link){
-		labels[link.source]  = labels[link.source] + nodes[link.source.name].level.toString();
+		labels[link.source.name]  = labels[link.source.name] + nodes[link.source.name].level.toString();
 	});
 
 	for (var p1 in nodes){
