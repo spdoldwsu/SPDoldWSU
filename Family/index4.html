@@ -298,9 +298,9 @@ function build_graph(source){
         .size([width, height])
         .nodes(d3.values(nodes))
         .links(edges)
-        .linkDistance(80)
+        .linkDistance(20)
         //.gravity(0.3)
-        .charge(-2500)
+        .charge(-120)
         .on("tick", tick)
         .start();
 
@@ -352,7 +352,7 @@ function build_graph(source){
     }
 
     function direct(d) {
-    	var k = 6;
+    	var k = 1;
     	d.source.y -= k;
     	d.target.y += k;
         return "M" + d.source.x + "," + d.source.y + " " + d.target.x + "," + d.target.y;
