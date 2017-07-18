@@ -275,7 +275,7 @@ function build_graph(source){
 
 
    	for (var p1 in nodes){
-   		for(var p2 in hasparentNode){
+   		/*for(var p2 in hasparentNode){
    			if(p1==hasparentNode[p2].name)
    				found=true;
    				break;
@@ -289,13 +289,24 @@ function build_graph(source){
 			edges.push(link);
 			counter++;
 		}
-		else{
+		else{*/
 			getlevel = getparentlevel(p1,1,hasparentNode);
 			if(p1.level<getlevel)
 				p1.level = getlevel;
 		}
 		index = index + 1;
 	}
+	for (var p1 in nodes){
+		if(nodes[p1].level==1){
+			var link={};
+		   	link.type = 'isFatherOf';
+			link.source = nodes["ii00"] || (nodes["ii00"] = {name: "ii00"});
+			link.target = nodes[p1];
+			edges.push(link);
+		}
+	}
+
+	nodes["ii00"].level = 0;
 	labels["ii00"]=html2utf("Root");
 
 	function GetObjectSize(obj) {
