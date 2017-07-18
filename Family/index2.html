@@ -422,7 +422,7 @@ function build_graph(source){
         .charge(-2500)
         .on("tick", tick);
         //.start();
-        update();
+
 
 	function update(nodes, edges) {
 	//var nodes = flatten(root);
@@ -601,10 +601,10 @@ function build_graph(source){
         d3.selectAll('text').style("fill", "#000");
         d3.selectAll('circle').style("fill", "#fff");
     }
-
-    force.start();
-    for (var i = 5000; i > 0; --i) force.tick();
-    force.stop();
+	update();
+//    force.start();
+//    for (var i = 5000; i > 0; --i) force.tick();
+//    force.stop();
 }
 
 
