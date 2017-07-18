@@ -312,6 +312,7 @@ function build_graph(source){
 	});
 
 	source.forEach(function(link){
+	if(nodes[link.source.name]!=undefined)
 		labels[link.source.name]  = labels[link.source.name] + nodes[link.source.name].level.toString();
 	});
 
