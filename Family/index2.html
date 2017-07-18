@@ -293,9 +293,10 @@ function build_graph(source){
 			getlevel = getparentlevel(p1,1,hasparentNode);
 			if(p1.level<getlevel)
 				p1.level = getlevel;
-		}
+		//}
 		index = index + 1;
 	}
+
 	for (var p1 in nodes){
 		if(nodes[p1].level==1){
 			var link={};
