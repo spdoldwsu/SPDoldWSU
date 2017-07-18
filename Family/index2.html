@@ -603,7 +603,7 @@ function build_graph(source){
         d3.selectAll('text').style("fill", "#000");
         d3.selectAll('circle').style("fill", "#fff");
     }
-//	update();
+	update();
     force.start();
     for (var i = 5000; i > 0; --i) force.tick();
     force.stop();
