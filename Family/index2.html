@@ -278,7 +278,7 @@ function build_graph(source){
    		if (!(p1 in hasparentNode)){
    			var link={};
            	link.type = 'isFatherOf';
-			link.source = nodes["ii0000"] || (nodes["ii0000"] = {name: "ii0000"});
+			link.source = nodes["ii00"] || (nodes["ii00"] = {name: "ii00"});
 			link.target = nodes[p1];
 			nodes[link.target.name].level = 1;
 			edges.push(link);
@@ -291,7 +291,7 @@ function build_graph(source){
 		}
 		index = index + 1;
 	}
-	labels["ii0000"]=html2utf("Root");
+	labels["ii00"]=html2utf("Root");
 
 	function GetObjectSize(obj) {
 		var size = 0, key;
