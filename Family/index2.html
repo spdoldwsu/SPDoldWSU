@@ -320,11 +320,11 @@ function build_graph(source){
 			}
 	});
 
-	source.forEach(function(link){
-	if(nodes[link.source.name]!=undefined)
-		labels[link.source.name]  = labels[link.source.name] + nodes[link.source.name].level.toString();
-
-	});
+//	source.forEach(function(link){
+//	if(nodes[link.source.name]!=undefined)
+//		labels[link.source.name]  = labels[link.source.name] + nodes[link.source.name].level.toString();
+//
+//	});
 
 	for (var p1 in nodes){
 		if(nodes[p1].level==1){
@@ -390,6 +390,7 @@ function build_graph(source){
     d3.select(this).remove();});
 */
 
+
     for (var p in nodes){
         table[p] = i++;
     }
@@ -398,6 +399,8 @@ function build_graph(source){
 
     var width = (counter > 75) ? 2250 : document.body.clientWidth-50;
     var height = parseInt(0.8*width);
+
+	flatten(nodes["ij00"]);
 
     d3.select("svg").remove();
     var svg = d3.select("body").append("svg")
@@ -470,6 +473,8 @@ function build_graph(source){
     text.on("mouseout", function(d) { dehandle(d) });
 
     function tick() {
+
+	//old stuff
         path.attr("d", direct);
         circle.attr("transform", transform);
         text.attr("transform", transform);
