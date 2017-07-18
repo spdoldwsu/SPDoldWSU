@@ -424,8 +424,8 @@ function build_graph(source){
         //.start();
         update();
 
-function update(nodes) {
-	var nodes = flatten(root);
+	function update(nodes) {
+	//var nodes = flatten(root);
 	  var links = d3.layout.hierarchy().links(nodes);
 
 	  // make sure we set .px/.py as well as node.fixed will use those .px/.py to 'stick' the node to:
@@ -438,12 +438,12 @@ function update(nodes) {
 	  // Restart the force layout.
 	  force
 		  .nodes(nodes)
-		  .links(links)
+		  .links(edges)
 		  .start();
 
 	  // Update the links…
 	  link = vis.selectAll("line.link")
-		  .data(links, function(d) { return d.target.id; });
+		  .data(edges, function(d) { return d.target.id; });
 
 	  // Enter any new links.
 	  link.enter().insert("line", ".node")
@@ -477,7 +477,7 @@ function update(nodes) {
 
 	  // Exit any old nodes.
 	  node.exit().remove();
-}
+	}
 
     var drag = force.drag()
         .on("dragstart", function(d){
@@ -556,7 +556,6 @@ function update(nodes) {
 			  }
 			}
 		  });
-
 
 		  link.attr("x1", function(d) { return d.source.x; })
 			  .attr("y1", function(d) { return d.source.y; })
