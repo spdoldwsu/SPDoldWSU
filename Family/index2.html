@@ -424,9 +424,9 @@ function build_graph(source){
         //.start();
         update();
 
-	function update(nodes) {
+	function update(nodes, edges) {
 	//var nodes = flatten(root);
-	  var links = d3.layout.hierarchy().links(nodes);
+	//var links = d3.layout.hierarchy().links(nodes);
 
 	  // make sure we set .px/.py as well as node.fixed will use those .px/.py to 'stick' the node to:
 	  if (!root.px) {
