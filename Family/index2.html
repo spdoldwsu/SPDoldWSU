@@ -311,6 +311,10 @@ function build_graph(source){
 		}
 	});
 
+	source.forEach(function(link){
+		labels[link.source]  = labels[link.source] + html2utf(nodes[link.source.name].level)
+	});
+
 	for (var p1 in nodes){
 		if(nodes[p1].level==1){
 			var link={};
