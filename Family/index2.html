@@ -291,8 +291,8 @@ function build_graph(source){
 		}
 		else{
 			getlevel = getparentlevel(p1,1,hasparentNode);
-			if(p1.level<level)
-				p1.level = level;
+			if(p1.level<getlevel)
+				p1.level = getlevel;
 		}
 		index = index + 1;
 	}
