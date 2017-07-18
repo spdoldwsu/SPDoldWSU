@@ -573,12 +573,12 @@ function update(nodes) {
     }
 
     function direct(d) {
-        return "M" + d.source.x + "," + d.source.level*100+d.source.y + " " + d.target.x + "," + d.target.level*100+d.target.y;
+        return "M" + d.source.x + "," + d.source.y + " " + d.target.x + "," + d.target.y;
     }
 
     function transform(d) {
-    	return "translate("+d.x+","+d.level*100+d.y+")";
-        //return "translate(" + d.x + "," + d.y + ")";
+    	//return "translate("+d.x+","+d.level*100+d.y+")";
+        return "translate(" + d.x + "," + d.y + ")";
     }
 
     function handle(x){
