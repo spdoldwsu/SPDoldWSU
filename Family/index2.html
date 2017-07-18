@@ -246,7 +246,7 @@ function build_graph(source){
             link.target = nodes[link.target] || (nodes[link.target] = {name: link.target, level:0});
             edges.push(link);
             counter++;
-            if(link.type == 'isFatherOf')
+            if(link.type == 'isFatherOf'||link.type=='isMotherOf')
             {
             	hasparentNode[parentcounter]=link.target;
             	parentcounter++;
@@ -270,12 +270,17 @@ function build_graph(source){
     // add levels to each node
     // Then position all nodes accordingly
     // finally delete the root node
-	var index = 0, nodesize, hasparentNodesize;
+	var index = 0, nodesize, hasparentNodesize,found=false;
 
 
 
    	for (var p1 in nodes){
-   		if (!(p1 in hasparentNode)){
+   		for(var p2 in hasparentNode){
+   			if(p1==p2.name)
+   				found=true;
+   				break;
+   		}
+   		if (found==false){
    			var link={};
            	link.type = 'isFatherOf';
 			link.source = nodes["ii00"] || (nodes["ii00"] = {name: "ii00"});
