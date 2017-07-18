@@ -422,6 +422,62 @@ function build_graph(source){
         .charge(-2500)
         .on("tick", tick);
         //.start();
+        update();
+
+function update(nodes) {
+	var nodes = flatten(root);
+	  var links = d3.layout.hierarchy().links(nodes);
+
+	  // make sure we set .px/.py as well as node.fixed will use those .px/.py to 'stick' the node to:
+	  if (!root.px) {
+		// root have not be set / dragged / moved: set initial root position
+		root.px = root.x = width / 2;
+		root.py = root.y = circle_radius(root) + 2;
+	  }
+
+	  // Restart the force layout.
+	  force
+		  .nodes(nodes)
+		  .links(links)
+		  .start();
+
+	  // Update the links…
+	  link = vis.selectAll("line.link")
+		  .data(links, function(d) { return d.target.id; });
+
+	  // Enter any new links.
+	  link.enter().insert("line", ".node")
+		  .attr("class", "link")
+		  .attr("x1", function(d) { return d.source.x; })
+		  .attr("y1", function(d) { return d.source.y; })
+		  .attr("x2", function(d) { return d.target.x; })
+		  .attr("y2", function(d) { return d.target.y; });
+
+	  // Exit any old links.
+	  link.exit().remove();
+
+	  // Update the nodes…
+	  node = vis.selectAll("circle.node")
+		  .data(nodes, function(d) { return d.id; })
+		  .style("fill", color);
+
+	  node.transition()
+		  .attr("cy", function(d) { return d.y; })
+		  .attr("r", function(d) { return circle_radius(d); });
+
+	  // Enter any new nodes.
+	  node.enter().append("circle")
+		  .attr("class", "node")
+		  .attr("cx", function(d) { return d.x; })
+		  .attr("cy", function(d) { return d.y; })
+		  .attr("r", function(d) { return circle_radius(d); })
+		  .style("fill", color)
+		  .on("click", click)
+		  .call(force.drag);
+
+	  // Exit any old nodes.
+	  node.exit().remove();
+}
 
     var drag = force.drag()
         .on("dragstart", function(d){
@@ -465,7 +521,51 @@ function build_graph(source){
     text.on("mouseout", function(d) { dehandle(d) });
 
     function tick() {
+		 force.nodes().forEach(function(d) {
+			if (!d.fixed) {
+			  var r = circle_radius(d) + 4, dx, dy, ly = 30;
 
+			  // #1: constraint all nodes to the visible screen:
+			  //d.x = Math.min(width - r, Math.max(r, d.x));
+			  //d.y = Math.min(height - r, Math.max(r, d.y));
+
+			  // #1.0: hierarchy: same level nodes have to remain with a 1 LY band vertically:
+			  if (d.children || d._children) {
+				var py = 0;
+				if (d.parent) {
+				  py = d.parent.y;
+				}
+				d.py = d.y = py + d.depth * ly + r;
+			  }
+
+			  // #1a: constraint all nodes to the visible screen: links
+			  dx = Math.min(0, width - r - d.x) + Math.max(0, r - d.x);
+			  dy = Math.min(0, height - r - d.y) + Math.max(0, r - d.y);
+			  d.x += 2 * Math.max(-ly, Math.min(ly, dx));
+			  d.y += 2 * Math.max(-ly, Math.min(ly, dy));
+			  // #1b: constraint all nodes to the visible screen: charges ('repulse')
+			  dx = Math.min(0, width - r - d.px) + Math.max(0, r - d.px);
+			  dy = Math.min(0, height - r - d.py) + Math.max(0, r - d.py);
+			  d.px += 2 * Math.max(-ly, Math.min(ly, dx));
+			  d.py += 2 * Math.max(-ly, Math.min(ly, dy));
+
+			  // #2: hierarchy means childs must be BELOW parents in Y direction:
+			  if (d.parent) {
+				d.y = Math.max(d.y, d.parent.y + ly);
+				d.py = Math.max(d.py, d.parent.py + ly);
+			  }
+			}
+		  });
+
+
+		  link.attr("x1", function(d) { return d.source.x; })
+			  .attr("y1", function(d) { return d.source.y; })
+			  .attr("x2", function(d) { return d.target.x; })
+			  .attr("y2", function(d) { return d.target.y; });
+
+		  node.attr("cx", function(d) { return d.x; })
+			  .attr("cy", function(d) { return d.y; });
+		}
 	//old stuff
         path.attr("d", direct);
         circle.attr("transform", transform);
