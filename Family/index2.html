@@ -297,6 +297,14 @@ function build_graph(source){
 		//index = index + 1;
 	}
 
+	source.forEach(function(link){
+	if(link.type=='isWifeOf')
+		if(nodes[link.source.name].level>nodes[link.target.name].level)
+			nodes[link.target.name].level = nodes[link.source.name].level;
+		else
+			nodes[link.source.name].level = nodes[link.target.name].level;
+	}
+
 	for (var p1 in nodes){
 		if(nodes[p1].level==1){
 			var link={};
