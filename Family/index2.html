@@ -473,7 +473,7 @@ function build_graph(source){
     }
 
     function direct(d) {
-        return "M" + d.source.x + "," + d.source.y + " " + d.target.x + "," + d.target.y;
+        return "M" + d.source.x + "," + d.source.level*100+d.source.y + " " + d.target.x + "," + d.target.level*100+d.target.y;
     }
 
     function transform(d) {
