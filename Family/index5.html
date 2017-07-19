@@ -342,10 +342,10 @@ function build_graph(source){
 				edges[edge].target.x = -1;
 				edges[edge].target.y = -1;
 			}
-			edges[edge].target.children = 0;
+			edges[edge].source.children = 0;
 			for (edge2 in edges){
-				if(edges[edge].target.name==edges[edge].source.name){
-					edges[edge].target.children = edges[edge].target.children + 1;
+				if(edges[edge].source.name==edges[edge2].source.name){
+					edges[edge].source.children = edges[edge].source.children + 1;
 				}
 			}
 		}
@@ -522,12 +522,12 @@ function build_graph(source){
     	}
     	else if(d.source.name == "
 		*/
-		/*if(d.source.name == "ij00"){
+		if(d.source.name == "ij00"){
 			d.source.x = width/2.0;
-			d.source.y = 10;
-			d.target.x = width/2.0-width/(2.0*RootCount);
+			d.source.y = 100;
+			d.target.x = width/2.0-width/(2.0*RootCount*d.source.children);
 			}
-		else{
+		*/else{
 			d.source.x = width/2.0;
 			d.source.y = 10;
 			d.target.x = width/2.0-width/(2.0*RootCount*d.source.children);
