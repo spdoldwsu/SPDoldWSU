@@ -397,7 +397,7 @@ function build_graph(source){
         .size([width, height])
         .nodes(d3.values(nodes))
         .links(edges)
-        .linkDistance(20)
+        .linkDistance(80)
         //.gravity(0.3)
         .charge(-120)
         .on("tick", tick)
@@ -452,10 +452,17 @@ function build_graph(source){
 
     function direct(d) {
     	var k = 0.1;
-		if((d.type=="isFatherOf")||(d.type=="isMotherOf")){
+		/*if((d.type=="isFatherOf")||(d.type=="isMotherOf")){
 	    	d.source.y -= k;
 	    	d.target.y += k;
     	}
+    	else if(d.type=="isWifeOf"){
+    		d.source.y = d.target.y'
+    	}
+    	else if(d.source.name == "
+		*/
+		d.source.y-=nodes[link.source.name].level*k;
+		d.target.y+=nodes[link.target.name].level*k;
         return "M" + d.source.x + "," + d.source.y + " " + d.target.x + "," + d.target.y;
     }
 
