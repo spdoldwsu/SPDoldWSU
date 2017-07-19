@@ -461,8 +461,8 @@ function build_graph(source){
     	}
     	else if(d.source.name == "
 		*/
-		d.source.y-=nodes[link.source.name].level*k;
-		d.target.y+=nodes[link.target.name].level*k;
+		d.source.y = nodes[link.source.name].level*k;
+		d.target.y = nodes[link.target.name].level*k;
         return "M" + d.source.x + "," + d.source.y + " " + d.target.x + "," + d.target.y;
     }
 
