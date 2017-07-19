@@ -352,7 +352,8 @@ function build_graph(source){
     }
 
     function direct(d) {
-    	var k = 1;
+    	var k = 0.05;
+
     	d.source.y -= k;
     	d.target.y += k;
         return "M" + d.source.x + "," + d.source.y + " " + d.target.x + "," + d.target.y;
