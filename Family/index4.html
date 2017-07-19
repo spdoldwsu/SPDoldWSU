@@ -352,10 +352,11 @@ function build_graph(source){
     }
 
     function direct(d) {
-    	var k = 0.3;
-
-    	d.source.y -= k;
-    	d.target.y += k;
+    	var k = 0.1;
+		if((d.type=="isFatherOf")||(d.type=="isMotherOf")){
+	    	d.source.y -= k;
+	    	d.target.y += k;
+    	}
         return "M" + d.source.x + "," + d.source.y + " " + d.target.x + "," + d.target.y;
     }
 
