@@ -331,18 +331,61 @@ function build_graph(source){
 		ccount = 0;
 
 		for (edge in edges){
-		if(edge.source.name == "ijoo"){
-			edge.source.x = width/(2.0);
-			edge.source.y = 100;
-			edge.target.x = width/(2.0)+(ccount-Rootcount/2.0)*(width/RootCount);
-			edge.target.y = edge.target.level*100;
-			ccount ++;
-			}
+			if(edges[edge].source.name == "ijoo"){
+				edges[edge].source.x = width/(2.0);
+				edges[edge].source.y = 100;
+				edges[edge].target.x = width/(2.0)+(ccount-Rootcount/2.0)*(width/RootCount);
+				edges[edge].target.y = 100+edges[edge].target.level*100;
+				ccount ++;
+				}
 			else{
-			edge.target.x = -1;
-			edge.target.y = -1;
+				edges[edge].target.x = -1;
+				edges[edge].target.y = -1;
+			}
+			edges[edge].target.children = 0;
+			for (edge2 in edges){
+				if(edges[edge].target.name==edges[edge].source.name){
+					edges[edge].target.children = edges[edge].target.children + 1;
+				}
 			}
 		}
+
+		ccount = 0;
+		for (edge in edges){
+			if(edges[edge].source.level == 1){
+				edges[edge].target.x = edges[edge].source.x+(ccount-edges[edge].source.children/2.0)*(edges[edge].source.x/edges[edge].source.children)
+				edges[edge].target.y = 100+edges[edge].target.level*100;
+				ccount++;
+			}
+		}
+
+		ccount = 0;
+				for (edge in edges){
+					if(edges[edge].source.level == 2){
+						edges[edge].target.x = edges[edge].source.x+(ccount-edges[edge].source.children/2.0)*(edges[edge].source.x/edges[edge].source.children)
+						edges[edge].target.y = 100+edges[edge].target.level*100;
+						ccount++;
+					}
+		}
+
+			ccount = 0;
+						for (edge in edges){
+							if(edges[edge].source.level == 3){
+								edges[edge].target.x = edges[edge].source.x+(ccount-edges[edge].source.children/2.0)*(edges[edge].source.x/edges[edge].source.children)
+								edges[edge].target.y = 100+edges[edge].target.level*100;
+								ccount++;
+							}
+		}
+
+			ccount = 0;
+								for (edge in edges){
+									if(edges[edge].source.level == 4){
+										edges[edge].target.x = edges[edge].source.x+(ccount-edges[edge].source.children/2.0)*(edges[edge].source.x/edges[edge].source.children)
+										edges[edge].target.y = 100+edges[edge].target.level*100;
+										ccount++;
+									}
+		}
+
 
 
 		function GetObjectSize(obj) {
@@ -479,13 +522,19 @@ function build_graph(source){
     	}
     	else if(d.source.name == "
 		*/
-		if(d.source.name == "ij00"){
+		/*if(d.source.name == "ij00"){
 			d.source.x = width/2.0;
 			d.source.y = 10;
 			d.target.x = width/2.0-width/(2.0*RootCount);
 			}
-		d.source.y = k+d.source.level*k;
-		d.target.y = k+d.target.level*k;
+		else{
+			d.source.x = width/2.0;
+			d.source.y = 10;
+			d.target.x = width/2.0-width/(2.0*RootCount*d.source.children);
+		}*/
+
+		//d.source.y = k+d.source.level*k;
+	//	d.target.y = k+d.target.level*k;
 
         return "M" + d.source.x + "," + d.source.y + " " + d.target.x + "," + d.target.y;
     }
