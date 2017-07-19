@@ -328,6 +328,23 @@ function build_graph(source){
 		nodes["ij00"].level = 0;
 		labels["ij00"]=html2utf("Root");
 
+		ccount = 0;
+
+		for (edge in edges){
+		if(edge.source.name == "ijoo"){
+			edge.source.x = width/(2.0);
+			edge.source.y = 100;
+			edge.target.x = width/(2.0)+(ccount-Rootcount/2.0)*(width/RootCount);
+			edge.target.y = edge.target.level*100;
+			ccount ++;
+			}
+			else{
+			edge.target.x = -1;
+			edge.target.y = -1;
+			}
+		}
+
+
 		function GetObjectSize(obj) {
 			var size = 0, key;
 			for (key in obj) {
