@@ -467,8 +467,8 @@ function build_graph(source){
 			d.source.y = 10;
 			d.target.x = width/2.0-width/(2.0*RootCount);
 			}
-		d.source.y = nodes[link.source.name].level*k;
-		d.target.y = nodes[link.target.name].level*k;
+		d.source.y = k+d.source.level*k;
+		d.target.y = k+d.target.level*k;
 
         return "M" + d.source.x + "," + d.source.y + " " + d.target.x + "," + d.target.y;
     }
