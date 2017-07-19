@@ -154,6 +154,7 @@ transform: rotate(45deg);
 
 </body>
 <script type="text/javascript">
+var rootchild = 0;
 var rel2col = {
     'isGrandParentOf':'#396',
     'hasGrandParent':'#06f',
@@ -525,7 +526,11 @@ function build_graph(source){
 		if(d.source.name == "ij00"){
 			d.source.x = width/2.0;
 			d.source.y = 100;
-			d.target.x = width/2.0-width/(2.0*RootCount*d.source.children);
+			d.target.x = width/2.0+(rootchild-RootCount/2.0)*(width/RootCount);
+			rootchild++;
+			if(rootchild >= RootCount)
+				rootchild = 0;
+			//width/2.0-width/(2.0*RootCount*d.source.children);
 			}
 		/*else{
 			d.source.x = width/2.0;
