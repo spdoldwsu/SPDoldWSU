@@ -451,7 +451,7 @@ function build_graph(source){
     }
 
     function direct(d) {
-    	var k = 0.1;
+    	var k = 0.05;
 		/*if((d.type=="isFatherOf")||(d.type=="isMotherOf")){
 	    	d.source.y -= k;
 	    	d.target.y += k;
@@ -463,6 +463,7 @@ function build_graph(source){
 		*/
 		d.source.y = nodes[link.source.name].level*k;
 		d.target.y = nodes[link.target.name].level*k;
+
         return "M" + d.source.x + "," + d.source.y + " " + d.target.x + "," + d.target.y;
     }
 
@@ -494,7 +495,7 @@ function build_graph(source){
     }
 
     force.start();
-    for (var i = 5000; i > 0; --i) force.tick();
+    for (var i = 50000; i > 0; --i) force.tick();
     force.stop();
 }
 
