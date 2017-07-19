@@ -349,7 +349,7 @@ function build_graph(source){
 				}
 			}
 		}
-
+/*
 		ccount = 0;
 		for (edge in edges){
 			if(edges[edge].source.level == 1){
@@ -386,7 +386,7 @@ function build_graph(source){
 									}
 		}
 
-
+*/
 
 		function GetObjectSize(obj) {
 			var size = 0, key;
@@ -512,7 +512,7 @@ function build_graph(source){
     }
 
     function direct(d) {
-    	var k = 100;
+    	var k = 0.01;
 		/*if((d.type=="isFatherOf")||(d.type=="isMotherOf")){
 	    	d.source.y -= k;
 	    	d.target.y += k;
@@ -533,8 +533,8 @@ function build_graph(source){
 			d.target.x = width/2.0-width/(2.0*RootCount*d.source.children);
 		}*/
 
-		d.source.y -= k*0.01*d.source.level;
-		d.target.y += k*0.01*d.target.level;
+		d.source.y -= k*d.source.level;
+		d.target.y += k*d.target.level;
 
         return "M" + d.source.x + "," + d.source.y + " " + d.target.x + "," + d.target.y;
     }
