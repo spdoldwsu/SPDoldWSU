@@ -313,7 +313,7 @@ function build_graph(source){
 	//		labels[link.source.name]  = labels[link.source.name] + nodes[link.source.name].level.toString();
 	//
 	//	});
-		RootCOunt = 0;
+		RootCount = 0;
 		for (var p1 in nodes){
 			if(nodes[p1].level==1){
 				var link={};
@@ -321,7 +321,7 @@ function build_graph(source){
 				link.source = nodes["ij00"] || (nodes["ij00"] = {name: "ij00"});
 				link.target = nodes[p1];
 				edges.push(link);
-				count++;
+				RootCount++;
 			}
 		}
 
@@ -465,7 +465,7 @@ function build_graph(source){
 		if(d.source.name == "ij00"){
 			d.source.x = width/2.0;
 			d.source.y = 10;
-			d.target.x = width/2.0-width/(2.0*count);
+			d.target.x = width/2.0-width/(2.0*RootCount);
 			}
 		d.source.y = nodes[link.source.name].level*k;
 		d.target.y = nodes[link.target.name].level*k;
