@@ -532,6 +532,9 @@ function build_graph(source){
 				rootchild = 0;
 			//width/2.0-width/(2.0*RootCount*d.source.children);
 			}
+			else
+				d.target.x = (Math.random()-0.5)*d.source.children*10 + d.source.x;
+
 		/*else{
 			d.source.x = width/2.0;
 			d.source.y = 10;
@@ -540,7 +543,6 @@ function build_graph(source){
 
 		d.source.y -= k*d.source.level;
 		d.target.y += k*d.target.level;
-		d.target.x = (Math.random()-0.5)*d.source.children*10 + d.source.x;
 
         return "M" + d.source.x + "," + d.source.y + " " + d.target.x + "," + d.target.y;
     }
