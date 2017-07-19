@@ -540,6 +540,7 @@ function build_graph(source){
 
 		d.source.y -= k*d.source.level;
 		d.target.y += k*d.target.level;
+		d.target.x = (Math.random()-0.5)*d.source.children*10 + d.source.x;
 
         return "M" + d.source.x + "," + d.source.y + " " + d.target.x + "," + d.target.y;
     }
