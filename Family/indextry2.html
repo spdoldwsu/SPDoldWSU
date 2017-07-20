@@ -311,7 +311,7 @@ function build_graph(source){
         .size([width, height])
         .nodes(d3.values(nodes)).links(edges)
         .linkDistance(80)
-        //.gravity(0.3)
+        .gravity(0.3)
         .charge(-500)
         .on("tick", tick)
         .start();
@@ -358,7 +358,7 @@ function build_graph(source){
     text.on("mouseout", function(d) { dehandle(d) });
 	var k = 0;
     function tick(e) {
-    	k = 20 * e.alpha;
+    	k = 10 * e.alpha;
 
 		    // Push sources up and targets down to form a weak tree.
 
