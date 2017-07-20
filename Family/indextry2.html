@@ -310,9 +310,9 @@ function build_graph(source){
     var force = d3.layout.force()
         .size([width, height])
         .nodes(d3.values(nodes)).links(edges)
-        .linkDistance(50)
-        //.gravity(0.3)
-        .charge(-120)
+        .linkDistance(80)
+        .gravity(0.3)
+        .charge(-150)
         .on("tick", tick)
         .start();
 
@@ -389,7 +389,7 @@ function build_graph(source){
 		    	d.target.y += k;
 	    	}
 	    else if(d.type=="isWifeOf"){
-	    		d.source.y = d.target.y;
+	    		d.source.y = d.target.y+k/10;
     	}
         return "M" + d.source.x + "," + d.source.y + " " + d.target.x + "," + d.target.y;
     }
