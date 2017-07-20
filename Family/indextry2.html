@@ -384,7 +384,7 @@ function build_graph(source){
 
     function direct(d) {
 
-    	if((d.type=="isFatherOf"||d.type=="isMotherOf")){
+    	if(d.type!="isWifeOf"){
 		    	d.source.y -= k;
 		    	d.target.y += k;
 	    	}
