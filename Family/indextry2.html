@@ -314,7 +314,7 @@ function build_graph(source){
         .gravity(0.3)
         .charge(-2500)
         .on("tick", tick);
-        //.start();
+        .start();
 
     var drag = force.drag()
         .on("dragstart", function(d){
@@ -417,8 +417,8 @@ function build_graph(source){
         d3.selectAll('circle').style("fill", "#fff");
     }
 
-    force.start();
-    for (var i = 10000; i > 0; --i) force.tick();
+   // force.start();
+   // for (var i = 10000; i > 0; --i) force.tick();
     //force.stop();
 }
 </script>
