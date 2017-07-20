@@ -311,7 +311,7 @@ function build_graph(source){
         .size([width, height])
         .nodes(d3.values(nodes)).links(edges)
         .linkDistance(80)
-        .gravity(0.3)
+        //.gravity(0.3)
         .charge(-500)
         .on("tick", tick)
         .start();
