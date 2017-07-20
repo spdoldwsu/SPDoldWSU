@@ -310,7 +310,7 @@ function build_graph(source){
     var force = d3.layout.force()
         .size([width, height])
         .nodes(d3.values(nodes)).links(edges)
-        .linkDistance(30)
+        .linkDistance(50)
         //.gravity(0.3)
         .charge(-120)
         .on("tick", tick)
