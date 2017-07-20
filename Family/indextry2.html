@@ -382,11 +382,11 @@ function build_graph(source){
         text.attr("transform", transform);
     }
 
-    function direct(d,e) {
+    function direct(d) {
 
-    	if((d.type=="isFatherOf")){
-		    	d.source.y -= 0.2;
-		    	d.target.y += 0.2;
+    	if((d.type=="isFatherOf"||d.type=="isMotherOf")){
+		    	d.source.y -= k;
+		    	d.target.y += k;
 	    	}
 	    else if(d.type=="isWifeOf"){
 	    		d.source.y = d.target.y;
