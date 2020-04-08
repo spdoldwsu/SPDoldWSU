@@ -203,7 +203,7 @@ xmlhttp.onreadystatechange = function(){
         } else alert("Error loading data!");
     }
 }
-xmlhttp.open("GET", "Ameta2.ged.inferred.json");
+xmlhttp.open("GET", "AmetaUpdated.json");
 xmlhttp.setRequestHeader("If-Modified-Since", "Sat, 1 Jan 2000 00:00:00 GMT");
 xmlhttp.send();
 
@@ -388,7 +388,7 @@ function circle_radius(d) {
 	      .links(links)
 	      .start();
 
-	  // Update the links…
+	  // Update the linksÂ…
 	  link = vis.selectAll("line.link")
 	      .data(links, function(d) { return d.target.id; });
 
@@ -403,7 +403,7 @@ function circle_radius(d) {
 	  // Exit any old links.
 	  link.exit().remove();
 
-	  // Update the nodes…
+	  // Update the nodesÂ…
 	  node = vis.selectAll("circle.node")
 	      .data(nodes, function(d) { return d.id; })
 	      .style("fill", color);
